@@ -4,9 +4,9 @@ import TransactionsMaker from './component/TransactionsMaker';
 import { useState, useEffect } from 'react';
 
 function App() {
+  var currentDate = new Date();
   var[balance, setBalance] = useState(500);
   const[mode, setMode] = useState("add");
-  var currentDate = new Date();
   const[transactionDate, settransactionDate] = useState(currentDate);
   
   useEffect (() => {
@@ -15,13 +15,12 @@ function App() {
  
   const updateBalance = (value, e) => { 
     e.preventDefault();
-      if(e.target.id == "add"){
+      if(e.target.id === "add"){
          balance = balance + parseInt(value);
          setMode("add");
          settransactionDate(currentDate);
-         var str = `${transactionDate} - ${balance} - ${mode}`;
         }
-      if(e.target.id == "sub"){
+      if(e.target.id === "sub"){
         balance = balance - parseInt(value);
         setMode("sub");
         settransactionDate(currentDate);

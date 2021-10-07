@@ -4,20 +4,9 @@ import './Transaction.css';
 const TransactionsMaker = ({onClick, balance}) =>{
     const[value, setValue] = useState(1);
     const onChange = event => {
-        if(event.target.value != 0)
+        if(event.target.value !== 0)
              setValue(event.target.value);
       };
-
-     /* const increment = () =>{
-            var total = balance + value;
-            updateBalance(total);
-            console.log(total);
-      }
-
-      const decrement = () =>{
-        var total = balance - value;
-            updateBalance(total);
-      }*/
 
     return (
         <div className="Tmaker">
